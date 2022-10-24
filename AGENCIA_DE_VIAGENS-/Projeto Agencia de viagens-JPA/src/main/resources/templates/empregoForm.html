@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="utf-8">
+ <title>Teste Spring Boot - JPA - H2 - </title>
+</head>
+<body>
+<h1>Formulario de Emprego</h1>
+<form action="#" th:action="@{/process}" th:object="${emprego}" method="post">
+Titulo: <input type="text" th:field="*{titulo}">
+<span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span><br>
+Empresa: <input type="text" th:field="*{empresa}">
+<span th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}"></span><br>
+Descricao: <textarea rows="3" th:field="*{descricao}"></textarea>
+<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span><br>
+ <input type="submit" value="Enviar">
+
+</form>
+</body>
+</html>
